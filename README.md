@@ -1,6 +1,6 @@
-# WEB API example
+# WEB API examples
 
-In this page you can found a bunch of web API examples, implemented in pure HTML and JavaScript.
+In this page you can found a bunch of IoT Guru Cloud API examples, implemented in pure HTML and JavaScript.
 
 ## Simple chart example
 
