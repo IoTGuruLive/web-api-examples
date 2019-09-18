@@ -1,0 +1,39 @@
+.chartContainer {
+  width: 380px;
+  height: 320px;
+}
+
+@media screen and (min-width: 480px) {
+  .chartContainer {
+    width: 460px;
+    height: 320px;
+  }
+}
+
+@media screen and (min-width: 736px) {
+  .chartContainer {
+    width: 716px;
+    height: 480px;
+  }
+}
+
+@media screen and (min-width: 980px) {
+  .chartContainer {
+    width: 960px;
+    height: 640px;
+  }
+}
+
+@media screen and (min-width: 1280px) {
+  .chartContainer {
+    width: 960px;
+    height: 640px;
+  }
+}
+
+@media screen and (min-width: 1680px) {
+  .chartContainer {
+    width: 960px;
+    height: 640px;
+  }
+}
