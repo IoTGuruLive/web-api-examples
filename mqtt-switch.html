@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>IoT Guru Cloud - MQTT switch example</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="main.css" />
+    </head>
+    <body>
+        <center>
+            <button id="mqttOn" name="mqttOn" value="ON">ON</button>
+            <button id="mqttOff" name="mqttOff" value="OFF">OFF</button>
+            <hr/>
+            <a href="https://iotguru.cloud"><img src="https://iotguru.cloud/images/powered-by-logo.png" style="height:40px;"></a>
+        </center>
+
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+        <script>
+            $("#mqttOn").click(function(){
+                $.ajax({url: "https://api.iotguru.live/mqtt/send/gfRwlK0xXflsoiyxdaNO2g/relay/1"});
+            });
+            $("#mqttOff").click(function(){
+                $.ajax({url: "https://api.iotguru.live/mqtt/send/gfRwlK0xXflsoiyxdaNO2g/relay/0"});
+            });
+        </script>
+    </body>
+</html>
