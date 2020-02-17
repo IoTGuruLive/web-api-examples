@@ -30,11 +30,11 @@
     <script>
         $("#mqttSend").click(function(){                
             alert($("#pushValue").val());
-            $.ajax({url: "https://api.iotguru.live/mqtt/send/lKoyDfzJWxl-qAwtP8pDAA/push/" + $("#pushValue").val()});               
+            $.ajax({url: "https://api.iotguru.live/mqtt/send/lKoyDfzJWxl-qAwtP8pDAA/push/" + $("#pushValue").val().substring(1)});               
         });
         $("#pushValue").change(function(){
             alert($("#pushValue").val());
-            $.ajax({url: "https://api.iotguru.live/mqtt/send/lKoyDfzJWxl-qAwtP8pDAA/push/" + $(this).val()});
+            $.ajax({url: "https://api.iotguru.live/mqtt/send/lKoyDfzJWxl-qAwtP8pDAA/push/" + $("#pushValue").val().substring(1)});
         });
     </script>
 </body></html>
