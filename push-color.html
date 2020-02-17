@@ -17,24 +17,23 @@
         <!-- Google Analytics Tag -- Please remove it from your copy! Thank you! :) -->
 
     </head>
-<body>
-    <center>
-        <label for="pushValue">Choose the next color:</label>
-        <input id="pushValue" name="pushValue" value="#ffffff" type="color">
-        <button id="mqttSend" name="Send" value="Send">Send</button>
-        <hr>
-        <a href="https://iotguru.cloud"><img src="https://iotguru.cloud/images/powered-by-logo.png" style="height:40px;"></a>
-    </center>
+    <body>
+        <center>
+            <label for="pushValue">Choose the next color:</label>
+            <input id="pushValue" name="pushValue" value="#ffffff" type="color">
+            <button id="mqttSend" name="Send" value="Send">Send</button>
+            <hr>
+            <a href="https://iotguru.cloud"><img src="https://iotguru.cloud/images/powered-by-logo.png" style="height:40px;"></a>
+        </center>
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-    <script>
-        $("#mqttSend").click(function(){                
-            alert($("#pushValue").val());
-            $.ajax({url: "https://api.iotguru.live/mqtt/send/lKoyDfzJWxl-qAwtP8pDAA/push/" + $("#pushValue").val().substring(1)});               
-        });
-        $("#pushValue").change(function(){
-            alert($("#pushValue").val());
-            $.ajax({url: "https://api.iotguru.live/mqtt/send/lKoyDfzJWxl-qAwtP8pDAA/push/" + $("#pushValue").val().substring(1)});
-        });
-    </script>
-</body></html>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+        <script>
+            $("#mqttSend").click(function(){                
+                $.ajax({url: "https://api.iotguru.live/mqtt/send/lKoyDfzJWxl-qAwtP8pDAA/push/" + $("#pushValue").val().substring(1)});               
+            });
+            $("#pushValue").change(function(){
+                $.ajax({url: "https://api.iotguru.live/mqtt/send/lKoyDfzJWxl-qAwtP8pDAA/push/" + $("#pushValue").val().substring(1)});
+            });
+        </script>
+    </body>
+</html>
