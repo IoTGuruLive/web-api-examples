@@ -22,14 +22,35 @@
             <label for="pushValue">Choose the next color:</label>
             <input id="pushValue" name="pushValue" value="#ffffff" type="color">
             <button id="mqttSend" name="Send" value="Send">Send</button>
+            <br/>
+            <button id="blackSend" name="Black" value="black">Black</button>
+            <button id="redSend" name="Red" value="red">Red</button>
+            <button id="greenSend" name="Green" value="green">Green</button>
+            <button id="blueSend" name="Blue" value="blue">Blue</button>
+            <button id="whiteSend" name="White" value="white">White</button>
             <hr>
             <a href="https://iotguru.cloud"><img src="https://iotguru.cloud/images/powered-by-logo.png" style="height:40px;"></a>
         </center>
 
         <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
         <script>
+            $("#blackSend").click(function(){                
+                $.ajax({url: "https://api.iotguru.live/mqtt/send/lKoyDfzJWxl-qAwtP8pDAA/push/000000"});
+            });
+            $("#redSend").click(function(){                
+                $.ajax({url: "https://api.iotguru.live/mqtt/send/lKoyDfzJWxl-qAwtP8pDAA/push/200000"});
+            });
+            $("#greenSend").click(function(){                
+                $.ajax({url: "https://api.iotguru.live/mqtt/send/lKoyDfzJWxl-qAwtP8pDAA/push/002000"});
+            });
+            $("#blueSend").click(function(){                
+                $.ajax({url: "https://api.iotguru.live/mqtt/send/lKoyDfzJWxl-qAwtP8pDAA/push/000020"});
+            });
+            $("#whiteSend").click(function(){                
+                $.ajax({url: "https://api.iotguru.live/mqtt/send/lKoyDfzJWxl-qAwtP8pDAA/push/202020"});
+            });
             $("#mqttSend").click(function(){                
-                $.ajax({url: "https://api.iotguru.live/mqtt/send/lKoyDfzJWxl-qAwtP8pDAA/push/" + $("#pushValue").val().substring(1)});               
+                $.ajax({url: "https://api.iotguru.live/mqtt/send/lKoyDfzJWxl-qAwtP8pDAA/push/" + $("#pushValue").val().substring(1)});
             });
             $("#pushValue").change(function(){
                 $.ajax({url: "https://api.iotguru.live/mqtt/send/lKoyDfzJWxl-qAwtP8pDAA/push/" + $("#pushValue").val().substring(1)});
