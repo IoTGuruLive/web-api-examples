@@ -15,3 +15,10 @@ Send '0' and '1' value to the (in source) specified node and field. Warning: do 
 
 * [HTML source](https://github.com/IoTGuruLive/web-api-examples/blob/master/mqtt-switch.html)
 * [Live demo](https://iotgurulive.github.io/web-api-examples/mqtt-switch.html)
+
+## Push color example
+
+Send a hex code of color to the end of the WS2812B LED strip.
+
+* [HTML source](https://github.com/IoTGuruLive/web-api-examples/blob/master/push-color.html)
+* [Live demo](https://iotgurulive.github.io/web-api-examples/push-color.html)
