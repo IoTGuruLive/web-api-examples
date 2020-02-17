@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>IoT Guru Cloud - Push color example</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="main.css" />
+
+        <!-- Google Analytics Tag -- Please remove it from your copy! Thank you! :) -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=UA-130199522-3"></script>
+        <script>
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'UA-130199522-3');
+        </script>
+        <!-- Google Analytics Tag -- Please remove it from your copy! Thank you! :) -->
+
+    </head>
+    <body>
+        <center>
+            <label for="pushValue">Hex code of color</label>
+            <input type="text" id="pushValue" name="pushValue" value="ffffff">ffffff</button>
+            <button id="mqttSend" name="Send" value="Send">
+            <hr/>
+            <a href="https://iotguru.cloud"><img src="https://iotguru.cloud/images/powered-by-logo.png" style="height:40px;"></a>
+        </center>
+
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+        <script>
+            $("#mqttSend").click(function(){                
+                $.ajax({url: "https://api.iotguru.live/mqtt/send/lKoyDfzJWxl-qAwtP8pDAA/push/" + $("#pushValue").val()});
+            });
+        </script>
+    </body>
+</html>
