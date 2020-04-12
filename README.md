@@ -9,6 +9,13 @@ Display daily, weekly, monthly and yearly charts of the (in source) specified no
 * [HTML source](https://github.com/IoTGuruLive/web-api-examples/blob/master/simple-chart.html)
 * [Live demo](https://iotgurulive.github.io/web-api-examples/simple-chart.html)
 
+## Dual chart example
+
+Display dual series of daily, weekly, monthly and yearly charts of the (in source) specified nodes and fields with auto-refresh feature.
+
+* [HTML source](https://github.com/IoTGuruLive/web-api-examples/blob/master/dual-chart.html)
+* [Live demo](https://iotgurulive.github.io/web-api-examples/dual-chart.html)
+
 ## MQTT switch example
 
 Send '0' and '1' value to the (in source) specified node and field. Warning: do not use without proper authentication!
