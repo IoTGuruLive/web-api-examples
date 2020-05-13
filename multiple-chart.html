@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>IoT Guru Cloud - Dual chart example</title>
+        <title>IoT Guru Cloud - Multiple chart example</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="main.css" />
@@ -24,7 +24,8 @@
             <button id="monthly" value="Monthly">Monthly</button>
             <button id="yearly" value="Yearly">Yearly</button>
             <hr/>
-            <div class="chartContainer" id="graphAverage">&nbsp;</div>
+            <div class="chartContainer1" id="graphAverage1">&nbsp;</div>
+            <div class="chartContainer2" id="graphAverage2">&nbsp;</div>
             <hr/>
             <a href="https://iotguru.cloud"><img src="https://iotguru.cloud/images/powered-by-logo.png" style="height:40px;"></a>
         </center>
@@ -136,19 +137,23 @@
                 var granularity = 'day';
                 function load() {
                     if (granularity === 'day') {
-                        loadData('graphAverage', 'Outside vs HVAC room temperature', 'Date and time', '°C', 'pDA5vKICK8GkfR5gUyUR6g,gy8rYTk1GxtKnwKAAM0R5w', 'temperature,temperature', 'DAY/288');
+                        loadData('graphAverage1', 'HVAC room temperature', 'Date and time', '°C', 'pDA5vKICK8GkfR5gUyUR6g', 'temperature', 'DAY/288');
+                        loadData('graphAverage2', 'Outside temperature', 'Date and time', '°C', 'gy8rYTk1GxtKnwKAAM0R5w', 'temperature', 'DAY/288');
                     }
 
                     if (granularity === 'week') {
-                        loadData('graphAverage', 'Outside vs HVAC room temperature', 'Date and time', '°C', 'pDA5vKICK8GkfR5gUyUR6g,gy8rYTk1GxtKnwKAAM0R5w', 'temperature,temperature', 'WEEK/168');
+                        loadData('graphAverage1', 'HVAC room temperature', 'Date and time', '°C', 'pDA5vKICK8GkfR5gUyUR6g', 'temperature', 'WEEK/168');
+                        loadData('graphAverage2', 'Outside temperature', 'Date and time', '°C', 'gy8rYTk1GxtKnwKAAM0R5w', 'temperature', 'WEEK/168');
                     }
 
                     if (granularity === 'month') {
-                        loadData('graphAverage', 'Outside vs HVAC room temperature', 'Date and time', '°C', 'pDA5vKICK8GkfR5gUyUR6g,gy8rYTk1GxtKnwKAAM0R5w', 'temperature,temperature', 'MONTH/240');
+                        loadData('graphAverage1', 'HVAC room temperature', 'Date and time', '°C', 'pDA5vKICK8GkfR5gUyUR6g', 'temperature', 'MONTH/240');
+                        loadData('graphAverage2', 'Outside temperature', 'Date and time', '°C', 'gy8rYTk1GxtKnwKAAM0R5w', 'temperature', 'MONTH/240');
                     }
 
                     if (granularity === 'year') {
-                        loadData('graphAverage', 'Outside vs HVAC room temperature', 'Date and time', '°C', 'pDA5vKICK8GkfR5gUyUR6g,gy8rYTk1GxtKnwKAAM0R5w', 'temperature,temperature', 'YEAR/366');
+                        loadData('graphAverage1', 'HVAC room temperature', 'Date and time', '°C', 'pDA5vKICK8GkfR5gUyUR6g', 'temperature', 'YEAR/366');
+                        loadData('graphAverage2', 'Outside temperature', 'Date and time', '°C', 'gy8rYTk1GxtKnwKAAM0R5w', 'temperature', 'YEAR/366');
                     }
 
                     setTimeout(function () {
