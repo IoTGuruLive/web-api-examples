@@ -31,6 +31,8 @@
         </center>
 
         <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.26.0/moment.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/moment-timezone/0.5.31/moment-timezone-with-data.min.js"></script>
         <script src="https://code.highcharts.com/highcharts.js"></script>
         <script src="https://code.highcharts.com/modules/exporting.js"></script>
 
@@ -118,7 +120,7 @@
                 for (var i = 0; i < data.length; i++) {
                     options.series[i] = {data: {}, name: {}};
                     options.series[i].name = data[i]["name"];
-                    options.series[i].data = data[i]["data"];
+                    options.series[i].data = data[i]["data"].sort(function(a, b) { return a[0] - b[0]; });
                 }
 
                 var chart = new Highcharts.Chart(options);
