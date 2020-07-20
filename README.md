@@ -16,6 +16,13 @@ Display daily, weekly, monthly and yearly charts of the (in source) specified no
 * [HTML source](https://github.com/IoTGuruLive/web-api-examples/blob/master/multiple-chart.html)
 * [Live demo](https://iotgurulive.github.io/web-api-examples/multiple-chart.html)
 
+## MultipleComplex chart example
+
+Display daily, weekly, monthly and yearly charts of the (in source) specified nodes and fields with auto-refresh feature.
+
+* [HTML source](https://github.com/IoTGuruLive/web-api-examples/blob/master/multiplecomplex-chart.html)
+* [Live demo](https://iotgurulive.github.io/web-api-examples/multiplecomplex-chart.html)
+
 ## Dual chart example
 
 Display dual series of daily, weekly, monthly and yearly charts of the (in source) specified nodes and fields with auto-refresh feature.
