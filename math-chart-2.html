@@ -132,7 +132,7 @@
                     data[1]["data"].forEach((item) => prodArray[item[0].toString()] = item[1]);
                     // console.log(humidityArray);
 
-                    for (var tempTimestamp in tempArray) {
+                    for (var tempTimestamp in consArray) {
                         var consAverage = consArray[tempTimestamp];
                         var prodAverage = prodArray[tempTimestamp];
                         if (consAverage === undefined || prodAverage === undefined || consAverage < 1 || prodAverage < 1) {
