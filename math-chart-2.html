@@ -149,7 +149,7 @@
                     }
 
                     const avg = options.series[1].data.reduce((sum, [, value]) => sum + value, 0) / data.length;
-                    options.series[1].data.map(([timestamp]) => [timestamp, avg]);
+                    options.series[1].data.forEach(item => { item[1] = avg; });
                 }
 
                 var chart = new Highcharts.Chart(options);
