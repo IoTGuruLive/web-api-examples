@@ -138,7 +138,8 @@
                         if (consAverage === undefined || prodAverage === undefined || consAverage < 1 || prodAverage < 1) {
                             continue;
                         }
-                        var cop = prodAverage / consAverage;
+                        val consPumps = 85.0;
+                        var cop = prodAverage / (consAverage + consPumps);
                         options.series[0].data.push([parseInt(tempTimestamp), cop]);
                         console.log([tempTimestamp, consAverage, prodAverage, cop]);
                     }
