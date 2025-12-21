@@ -135,6 +135,7 @@
                     data[1]["data"].forEach((item) => prodArray[item[0].toString()] = item[1]);
                     // console.log(humidityArray);
 
+                    var sum = 0;
                     for (var tempTimestamp in consArray) {
                         var consAverage = consArray[tempTimestamp];
                         var prodAverage = prodArray[tempTimestamp];
@@ -143,13 +144,16 @@
                         }
                         var consPumps = 85.0;
                         var cop = prodAverage / (consAverage + consPumps);
-                        options.series[0].data.push([parseInt(tempTimestamp), cop]);
-                        options.series[1].data.push([parseInt(tempTimestamp), cop]);
-                        console.log([tempTimestamp, consAverage, prodAverage, cop]);
+                        sum += cop;
+                        options.series[0].data.push([parseInt(tempTimestamp), cop.toFixed(2)]);
+                        options.series[1].data.push([parseInt(tempTimestamp), cop.toFixed(2)]);
+                        console.log([tempTimestamp, consAverage, prodAverage, cop.toFixed(2)]);
                     }
 
-                    const avg = options.series[1].data.reduce((sum, [, value]) => sum + value, 0) / data.length;
-                    options.series[1].data.forEach(item => { item[1] = avg; });
+                    if (options.series[1].data.length > 0) {
+                      const avg = sum / options.series[1].data.length;
+                      options.series[1].data.forEach(item => { item[1] = avg.toFixed(2); });
+                    }
                 }
 
                 var chart = new Highcharts.Chart(options);
