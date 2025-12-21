@@ -122,8 +122,11 @@
 
                 if (data.length === 2) {
                     options.series[0] = {data: {}, name: {}};
-                    options.series[0].name = 'Absolute humidity';
+                    options.series[0].name = 'COP';
                     options.series[0].data = [];
+                    options.series[1] = {data: {}, name: {}};
+                    options.series[1].name = 'Average COP';
+                    options.series[1].data = [];
 
                     let consArray = [];
                     data[0]["data"].forEach((item) => consArray[item[0].toString()] = item[1]);
@@ -138,11 +141,15 @@
                         if (consAverage === undefined || prodAverage === undefined || consAverage < 1 || prodAverage < 1) {
                             continue;
                         }
-                        val consPumps = 85.0;
+                        var consPumps = 85.0;
                         var cop = prodAverage / (consAverage + consPumps);
                         options.series[0].data.push([parseInt(tempTimestamp), cop]);
+                        options.series[1].data.push([parseInt(tempTimestamp), cop]);
                         console.log([tempTimestamp, consAverage, prodAverage, cop]);
                     }
+
+                    const avg = options.series[1].data.reduce((sum, [, value]) => sum + value, 0) / data.length;
+                    options.series[1].data.map(([timestamp]) => [timestamp, avg]);
                 }
 
                 var chart = new Highcharts.Chart(options);
